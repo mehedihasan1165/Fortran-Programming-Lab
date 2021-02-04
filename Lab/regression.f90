@@ -18,10 +18,10 @@ program regression
     real xbar, ybar
     sumx = 0.0; sumy = 0.0; sumxy = 0.0; sumxx = 0.0
     
-	open (10, file="points.dat") ! open the data file; attach to unit 10
+    open (10, file="points.dat") ! open the data file; attach to unit 10
     read (10, *) n
     
-	! read the rest of the points, one  per  line and add to sums
+    ! read the rest of the points, one  per  line and add to sums
     do i = 1, n
         read (10, *) x(i), y(i)
         sumx = sumx + x(i)
@@ -31,7 +31,7 @@ program regression
     end do
     close (10) ! finished with the data file
     
-	!calculate the best-fit stright line
+    !calculate the best-fit stright line
     xbar = sumx/n
     ybar = sumy/n
     m = (sumxy/n - xbar*ybar)/(sumxx/n - xbar**2)
@@ -40,7 +40,7 @@ program regression
     print *, "Intercept= ", c
     print "(3(1x,a10))", "x", "y", "mx+c"
     
-	do i = 1, n
+    do i = 1, n
         print "(3(1x,es10.3))", x(i), y(i), m*x(i) + c
     end do
 end program regression

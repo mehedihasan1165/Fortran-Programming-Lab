@@ -4,7 +4,7 @@ program binomial
     real(kind=rkind) n, r, factorial
     integer ans
     
-	print *, "enter a binomial coefficient (n, r)"
+    print *, "enter a binomial coefficient (n, r)"
     read *, n, r
     ans = (factorial(n)/(factorial(r)*(factorial(n - r))))
     print *, ans
@@ -20,7 +20,7 @@ function factorial(num) result(ans)
     j = num
     ans = 1
     
-	if (num > 1) then
+    if (num > 1) then
         do i = 1, j
             ans = ans*i
         end do
